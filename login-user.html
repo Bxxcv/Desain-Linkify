@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Daftar - LINKify</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+    body { background: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 16px; }
+    .auth-card { background: #fff; width: 100%; max-width: 400px; padding: 32px; border-radius: 20px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+    .auth-header { text-align: center; margin-bottom: 32px; }
+    .auth-header h1 { font-size: 24px; font-weight: 800; margin: 0; color: #1e293b; }
+    .auth-header p { font-size: 13px; color: #64748b; margin-top: 8px; }
+    .input-group { margin-bottom: 16px; }
+    .input-group label { display: block; font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 6px; }
+    .input-group input { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #e2e8f0; border-radius: 10px; font-family: 'Plus Jakarta Sans'; background: #f8fafc; }
+    .input-group input:focus { border-color: #4f46e5; outline: none; background: #fff; }
+    .btn-auth { width: 100%; background: #4f46e5; color: #fff; border: none; padding: 14px; border-radius: 10px; font-weight: 700; font-size: 14px; cursor: pointer; margin-top: 8px; }
+    .switch-mode { text-align: center; font-size: 13px; margin-top: 20px; color: #64748b; }
+    .switch-mode a { color: #4f46e5; font-weight: 700; text-decoration: none; }
+    #register-form { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="auth-card">
+  <div id="login-form">
+    <div class="auth-header">
+      <h1>Selamat Datang! 👋</h1>
+      <p>Masuk ke dashboard toko LINKify lu.</p>
+    </div>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="nama@email.com">
+    </div>
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••">
+    </div>
+    <button class="btn-auth">Masuk ke Dashboard</button>
+    <div class="switch-mode">Belum punya akun? <a href="#" onclick="toggleAuth()">Daftar Sekarang</a></div>
+  </div>
+
+  <div id="register-form">
+    <div class="auth-header">
+      <h1>Buat Akun Baru 🚀</h1>
+      <p>Mulai jualan online dalam 30 detik.</p>
+    </div>
+    <div class="input-group">
+      <label>Nama Toko</label>
+      <input type="text" placeholder="Toko Keren">
+    </div>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="nama@email.com">
+    </div>
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••">
+    </div>
+    <button class="btn-auth">Daftar Akun</button>
+    <div class="switch-mode">Sudah punya akun? <a href="#" onclick="toggleAuth()">Masuk Disini</a></div>
+  </div>
+</div>
+
+<script>
+  function toggleAuth() {
+    const login = document.getElementById('login-form');
+    const register = document.getElementById('register-form');
+    login.style.display = (login.style.display === 'none') ? 'block' : 'none';
+    register.style.display = (register.style.display === 'none') ? 'block' : 'none';
+  }
+</script>
+</body>
+</html>

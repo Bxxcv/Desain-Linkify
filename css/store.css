@@ -1,0 +1,130 @@
+/* css/store.css */
+/* Import rumpun font ikonik untuk masing-masing karakter industri */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+/* --- STRUKTUR BASE DASAR (UNIVERSAL) --- */
+body {
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+  transition: all 0.3s ease;
+}
+.store-container {
+  max-width: 480px; margin: 0 auto; padding: 0 16px 100px 16px; box-sizing: border-box;
+}
+.shop-title { margin: 0; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.social-medias { display: flex; justify-content: center; gap: 14px; margin-bottom: 24px; }
+.social-icon { text-decoration: none; font-size: 20px; }
+.action-links-wrapper { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.link-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 14px; }
+.link-content { display: flex; align-items: center; gap: 12px; }
+.products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.product-card { display: flex; flex-direction: column; overflow: hidden; }
+.card-image-wrapper { width: 100%; height: 160px; position: relative; }
+.card-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.card-body { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
+.product-name { font-size: 12px; font-weight: 600; margin: 0; line-height: 1.4; }
+.price-row { display: flex; align-items: center; gap: 6px; margin: 6px 0 2px 0; }
+.card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: auto; }
+.card-actions a { font-size: 11px; font-weight: 600; text-align: center; padding: 8px 4px; border-radius: 6px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px; }
+.floating-wa-trigger { position: fixed; bottom: 20px; right: 20px; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 999; text-decoration: none; }
+
+/* ==========================================================================
+   1. TEMA KULINER & UMKM MAKANAN (Warm, Playful, Appetizing)
+   ========================================================================== */
+body.theme-kuliner {
+  background-color: #fffaf0; color: #4a2c11; font-family: 'Fredoka', sans-serif;
+}
+.theme-kuliner .store-header { text-align: center; padding: 30px 16px; background: #ffeaa7; border-radius: 0 0 32px 32px; }
+.theme-kuliner .shop-avatar { border: 4px solid #ff9f43; border-radius: 24px; }
+.theme-kuliner .verification-text { background: #ff9f43; color: #fff; border-radius: 8px; font-size: 10px; padding: 2px 6px; }
+.theme-kuliner .social-icon { color: #d35400; }
+.theme-kuliner .link-item { background: #ffffff; color: #4a2c11; border: 2px solid #ff9f43; border-radius: 16px; box-shadow: 0 6px 0 #ff9f43; }
+.theme-kuliner .tab-btn { background: #ffeaa7; color: #d35400; border-radius: 12px; font-family: 'Fredoka', sans-serif; }
+.theme-kuliner .tab-btn.active { background: #ff9f43; color: #fff; }
+.theme-kuliner .product-card { background: #ffffff; border: 2px solid #f39c12; border-radius: 18px; }
+.theme-kuliner .price-current { color: #e67e22; font-size: 15px; }
+.theme-kuliner .btn-card-wa { background: #25D366; color: #fff; border-radius: 8px; }
+.theme-kuliner .btn-card-shopee { background: #ff4d00; color: #fff; border-radius: 8px; }
+.theme-kuliner .floating-wa-trigger { background: #ff9f43; box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4); }
+
+/* ==========================================================================
+   2. TEMA KECANTIKAN & SKINCARE (Aesthetic, Luxury, Pastel Clean)
+   ========================================================================== */
+body.theme-skincare {
+  background-color: #faf6f5; color: #4a3f3b; font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.theme-skincare .store-header { text-align: center; padding: 40px 16px; background: #fff; }
+.theme-skincare .shop-title { font-family: 'Playfair Display', serif; font-size: 24px; font-style: italic; }
+.theme-skincare .shop-avatar { border: 1px solid #d4af37; border-radius: 50%; }
+.theme-skincare .verification-text { background: transparent; color: #b392ac; border: 1px solid #b392ac; border-radius: 0; text-transform: uppercase; letter-spacing: 0.1em; }
+.theme-skincare .social-icon { color: #8a7a74; }
+.theme-skincare .link-item { background: #ffffff; color: #4a3f3b; border-radius: 0px; border-bottom: 1px solid #e2d5d1; }
+.theme-skincare .tab-btn { background: #fff; color: #8a7a74; border: 1px solid #e2d5d1; border-radius: 0; font-size: 11px; text-transform: uppercase; }
+.theme-skincare .tab-btn.active { background: #4a3f3b; color: #fff; border-color: #4a3f3b; }
+.theme-skincare .product-card { background: #ffffff; border-radius: 0px; border: 1px solid #e2d5d1; }
+.theme-skincare .price-current { color: #9c7c73; font-weight: 500; }
+.theme-skincare .btn-card-wa { background: #4a3f3b; color: #fff; border-radius: 0; }
+.theme-skincare .btn-card-shopee { background: #e2d5d1; color: #4a3f3b; border-radius: 0; }
+.theme-skincare .floating-wa-trigger { background: #4a3f3b; border-radius: 0; }
+
+/* ==========================================================================
+   3. TEMA ELEKTRONIK & GADGET (Cyberpunk, High-Tech, Dark Matrix)
+   ========================================================================== */
+body.theme-gadget {
+  background-color: #060814; color: #00ffcc; font-family: 'Space Grotesk', sans-serif;
+}
+.theme-gadget .store-header { text-align: center; padding: 30px 16px; background: #0c102b; border-bottom: 2px solid #00ffcc; }
+.theme-gadget .shop-avatar { border: 2px dashed #00ffcc; border-radius: 12px; }
+.theme-gadget .shop-bio { color: #8fa0dd; }
+.theme-gadget .verification-text { background: #00ffcc; color: #060814; font-weight: 700; border-radius: 4px; }
+.theme-gadget .social-icon { color: #00ffcc; }
+.theme-gadget .link-item { background: #0c102b; color: #fff; border: 1px solid #2f3875; border-radius: 8px; }
+.theme-gadget .link-item:hover { border-color: #00ffcc; box-shadow: 0 0 10px rgba(0,255,204,0.3); }
+.theme-gadget .tab-btn { background: #0c102b; color: #8fa0dd; border: 1px solid #2f3875; border-radius: 6px; }
+.theme-gadget .tab-btn.active { background: #00ffcc; color: #060814; }
+.theme-gadget .product-card { background: #0c102b; border: 1px solid #2f3875; border-radius: 12px; }
+.theme-gadget .product-name { color: #fff; }
+.theme-gadget .price-current { color: #ff0055; font-weight: 700; }
+.theme-gadget .btn-card-wa { background: #111; color: #00ffcc; border: 1px solid #00ffcc; border-radius: 6px; }
+.theme-gadget .btn-card-shopee { background: #ff0055; color: #fff; border-radius: 6px; }
+.theme-gadget .floating-wa-trigger { background: #00ffcc; color: #060814; box-shadow: 0 0 15px #00ffcc; }
+
+/* ==========================================================================
+   4. TEMA KREATOR & FREELANCER (Bold, Modern Editorial, Anti-Mainstream)
+   ========================================================================== */
+body.theme-kreator {
+  background-color: #ffffff; color: #000000; font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.theme-kreator .store-header { text-align: left; padding: 40px 16px 20px 16px; background: #ffffff; }
+.theme-kreator .shop-title { justify-content: flex-start; font-size: 28px; font-weight: 800; letter-spacing: -0.03em; }
+.theme-kreator .shop-avatar { border-radius: 0px; border: 3px solid #000; transform: rotate(-2deg); }
+.theme-kreator .verification-text { background: #000; color: #cafe48; border-radius: 0; font-weight: 800; }
+.theme-kreator .social-medias { justify-content: flex-start; }
+.theme-kreator .social-icon { color: #000; font-size: 24px; }
+.theme-kreator .link-item { background: #cafe48; color: #000; border: 2px solid #000; border-radius: 0px; box-shadow: 4px 4px 0 #000; font-weight: 800; }
+.theme-kreator .tab-btn { background: #fff; color: #000; border: 2px solid #000; border-radius: 0; font-weight: 700; box-shadow: 2px 2px 0 #000; }
+.theme-kreator .tab-btn.active { background: #000; color: #fff; }
+.theme-kreator .product-card { background: #ffffff; border: 2px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000; }
+.theme-kreator .price-current { font-size: 16px; font-weight: 800; }
+.theme-kreator .btn-card-wa { background: #000; color: #fff; border-radius: 0; }
+.theme-kreator .btn-card-shopee { background: #fff; color: #000; border: 2px solid #000; border-radius: 0; }
+.theme-kreator .floating-wa-trigger { background: #000; color: #fff; border: 2px solid #fff; border-radius: 0; box-shadow: -4px 4px 0 #cafe48; }
+
+/* ==========================================================================
+   5. TEMA RESELLER & DROPSHIPPER (Clean Marketplace, High Conversion)
+   ========================================================================== */
+body.theme-reseller {
+  background-color: #f4f6f9; color: #333333; font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.theme-reseller .store-header { text-align: center; padding: 24px 16px; background: #fff; border-bottom: 1px solid #e5e7eb; }
+.theme-reseller .shop-avatar { border: 2px solid #0064d2; border-radius: 50%; }
+.theme-reseller .verification-text { background: #e0f2fe; color: #0369a1; border-radius: 4px; }
+.theme-reseller .social-icon { color: #4b5563; }
+.theme-reseller .link-item { background: #ffffff; color: #1f2937; border-radius: 10px; border: 1px solid #e5e7eb; }
+.theme-reseller .tab-btn { background: #e5e7eb; color: #4b5563; border-radius: 99px; }
+.theme-reseller .tab-btn.active { background: #0064d2; color: #fff; }
+.theme-reseller .product-card { background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; }
+.theme-reseller .price-current { color: #ff5722; font-size: 15px; }
+.theme-reseller .btn-card-wa { background: #e8fff0; color: #15803d; border-radius: 6px; }
+.theme-reseller .btn-card-shopee { background: #ff5722; color: #fff; border-radius: 6px; }
+.theme-reseller .floating-wa-trigger { background: #25D366; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }

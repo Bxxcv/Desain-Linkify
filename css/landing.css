@@ -1,0 +1,246 @@
+/* css/landing.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap');
+
+/* --- RESET & GLOBAL KONTROL --- */
+.apple-nav, .apple-hero, #demo, #fitur, #matrix, #harga, #faq, .apple-footer, #contactWidget {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif !important;
+}
+
+body {
+  background-color: #000000 !important;
+  color: #f5f5f7 !important;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* --- AKSEN GRADASI PREMIUM --- */
+.text-gradient {
+  background: linear-gradient(135deg, #ff7e40 0%, #af52de 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn-gradient {
+  background: linear-gradient(135deg, #ff7e40 0%, #af52de 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(175, 82, 222, 0.3);
+}
+
+/* --- SYSTEM ANIMASI SCROLL (APPLE-STYLE FADE) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- NAVBAR BANNER --- */
+.apple-nav {
+  background: rgba(22, 22, 23, 0.85) !important;
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;
+}
+.nav-content {
+  max-width: 1024px; margin: 0 auto; height: 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; font-size: 12px;
+}
+.nav-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; color: #fff; text-decoration: none; }
+.nav-brand img { height: 20px; width: auto; object-fit: contain; }
+.nav-content a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+.nav-content a:hover { color: #fff; }
+
+/* --- HERO SECTION --- */
+.apple-hero { padding: 150px 20px 40px 20px; text-align: center; background: #000000; }
+.apple-hero h1 {
+  font-size: 48px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+  color: #f5f5f7; margin: 0 0 16px 0;
+}
+.apple-hero p { font-size: 20px; color: #86868b; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.3; }
+.apple-cta-links { display: flex; gap: 24px; justify-content: center; font-size: 17px; margin-bottom: 50px; }
+.apple-link-action { color: #2997ff; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+.apple-link-action:hover { text-decoration: underline; }
+
+/* Dashboard Showcase Preview Image */
+.hero-visual-wrapper { max-width: 840px; margin: 0 auto; padding: 0 20px; }
+.hero-main-dashboard {
+  width: 100%; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 30px 100px rgba(175, 82, 222, 0.15);
+}
+
+/* --- LIVE PREVIEW (INDEX.HTML) SECTION --- */
+.demo-section { max-width: 1024px; margin: 60px auto; padding: 0 20px; }
+.demo-grid-wrapper {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; margin-top: 40px; text-align: left; align-items: center;
+}
+.demo-specs h3 { font-size: 32px; font-weight: 700; margin: 0 0 16px 0; color: #fff; }
+.demo-specs p { color: #86868b; font-size: 16px; line-height: 1.6; margin: 0 0 24px 0; }
+
+/* Frame Mockup HP */
+.index-html-frame {
+  background: #09090b; border: 8px solid #1c1c1e; border-radius: 40px; padding: 24px 16px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8); box-sizing: border-box; width: 100%; max-width: 340px; margin: 0 auto;
+}
+.index-profile-section { text-align: center; margin-bottom: 20px; }
+.index-avatar {
+  width: 76px; height: 76px; border-radius: 50%; margin: 0 auto 12px auto;
+  border: 2px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.3); object-fit: cover;
+}
+.index-store-title { font-size: 18px; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; gap: 4px; }
+.index-store-bio { font-size: 13px; color: #86868b; margin-top: 4px; }
+
+/* Grid Produk Di Dalam Mockup HP */
+.index-products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.index-product-card { background: #1c1c1e; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
+.index-product-card img { width: 100%; height: 110px; object-fit: cover; }
+.index-product-info { padding: 8px; font-size: 12px; }
+.index-product-price { font-weight: 700; color: #ff7e40; margin-top: 2px; }
+
+.index-link-button {
+  background: #1c1c1e; border: 1px solid rgba(255,255,255,0.05); color: #fff;
+  padding: 12px; border-radius: 12px; display: block; text-align: center;
+  font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 10px;
+}
+.index-link-button.wa-btn { background: #25D366; border: none; }
+
+/* Teks Padat Grid Bawah */
+.specs-dense-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.dense-card { text-align: left; border-top: 1px solid #333; padding-top: 16px; }
+.dense-card h4 { font-size: 15px; font-weight: 600; color: #fff; margin: 0 0 8px 0; }
+.dense-card p { font-size: 13px; color: #86868b; margin: 0; line-height: 1.5; }
+
+/* --- VISUAL IMAGE FITUR SHOWCASE --- */
+.showcase-container { max-width: 1024px; margin: 0 auto; padding: 0 20px; }
+.split-showcase {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #161617;
+  border-radius: 24px; overflow: hidden; align-items: center; margin: 40px 0;
+}
+.split-showcase.reverse { direction: rtl; }
+.split-showcase.reverse .showcase-text { direction: ltr; }
+.showcase-text { padding: 60px; }
+.showcase-text h2 { font-size: 32px; font-weight: 700; margin: 0 0 12px 0; color: #fff; }
+.showcase-text p { font-size: 16px; color: #86868b; line-height: 1.5; margin: 0; }
+.showcase-image { width: 100%; height: 100%; min-height: 340px; object-fit: cover; }
+
+/* --- MATRIKS KOMPARASI --- */
+.matrix-section { max-width: 800px; margin: 100px auto; padding: 0 20px; }
+.matrix-table { width: 100%; border-collapse: collapse; margin-top: 30px; text-align: left; }
+.matrix-table th { padding: 16px; font-size: 15px; font-weight: 600; border-bottom: 1px solid #333; color: #fff; }
+.matrix-table td { padding: 16px; font-size: 14px; border-bottom: 1px solid #222; color: #86868b; }
+.matrix-table tr:hover td { color: #fff; }
+.matrix-check { color: #af52de; font-weight: bold; }
+
+/* --- PRICING SECTION --- */
+.apple-pricing-grid { max-width: 840px; margin: 40px auto 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 0 20px; }
+.apple-price-card { background: #161617 !important; padding: 40px 30px; border-radius: 22px; text-align: left; border: 1px solid rgba(255,255,255,0.02); }
+.apple-price-card.premium-card { background: #000000 !important; border: 2px solid #af52de; box-shadow: 0 10px 30px rgba(175, 82, 222, 0.1); }
+.apple-price-card h3 { font-size: 24px; font-weight: 700; margin: 8px 0 0 0; color: #fff; }
+.apple-price-card .cost { font-size: 42px; font-weight: 800; margin: 20px 0; color: #fff; }
+.apple-btn-buy { background: #0071e3; color: #fff; padding: 12px; border-radius: 24px; font-size: 14px; display: block; text-align: center; font-weight: 600; text-decoration: none; }
+.apple-price-features { list-style: none; padding: 0; margin: 24px 0 0 0; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+.apple-price-features li { font-size: 13px; color: #86868b; line-height: 1.8; margin-bottom: 8px; }
+
+/* --- FAQ ACCORDION --- */
+.faq-section { max-width: 720px; margin: 100px auto; padding: 0 20px; }
+.faq-item { border-bottom: 1px solid #333; padding: 20px 0; cursor: pointer; }
+.faq-question { display: flex; justify-content: space-between; align-items: center; font-size: 17px; font-weight: 500; color: #fff; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: #86868b; font-size: 14px; line-height: 1.6; }
+.faq-item.open .faq-answer { max-height: 120px; margin-top: 10px; }
+.faq-icon { transition: transform 0.3s; color: #86868b; }
+.faq-item.open .faq-icon { transform: rotate(45deg); color: #fff; }
+
+/* --- APPLE FOOTER DIRECTORY --- */
+.apple-footer { background: #161617; color: #86868b; font-size: 12px; padding: 50px 20px; margin-top: 80px; border-top: 1px solid rgba(255,255,255,0.08); text-align: left; }
+.footer-inner { max-width: 1024px; margin: 0 auto; }
+.footer-notes { padding-bottom: 20px; border-bottom: 1px solid #424245; margin-bottom: 20px; font-size: 11px; }
+.footer-directory { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.directory-col h3 { font-size: 12px; font-weight: 600; color: #f5f5f7; margin-bottom: 12px; }
+.directory-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.directory-col ul a { color: #86868b; text-decoration: none; }
+.directory-col ul a:hover { color: #fff; text-decoration: underline; }
+.footer-legal { display: flex; justify-content: space-between; border-top: 1px solid #424245; padding-top: 20px; margin-top: 20px; font-size: 11px; }
+.footer-legal a { color: #86868b; text-decoration: none; }
+
+/* --- INTERACTIVE FLOATING WIDGET --- */
+.apple-fab-container {
+  position: fixed; bottom: 24px; right: 24px; z-index: 10000;
+}
+
+/* Tombol Garis Tiga Utama */
+.apple-fab-trigger {
+  width: 56px; height: 56px; border-radius: 50%; background: #1c1c1e;
+  border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-fab-trigger:hover { transform: scale(1.05); background: #2c2c2e; }
+
+/* Animasi Rotasi Ikon (Hamburger -> X) */
+.apple-fab-trigger i {
+  color: #fff; font-size: 24px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-fab-container.menu-open .apple-fab-trigger i {
+  transform: rotate(90deg);
+}
+
+/* Jendela Popup Utama - Slide Up */
+.fab-menu-popup {
+  position: absolute; bottom: 72px; right: 0;
+  background: rgba(22, 22, 23, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08); width: 320px; border-radius: 20px;
+  overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,0.7);
+  padding: 16px;
+  
+  /* Sembunyi awal ke bawah */
+  opacity: 0; visibility: hidden;
+  transform: translateY(30px) scale(0.95);
+  transform-origin: bottom right;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Kondisi Terbuka Naik Ke Atas */
+.apple-fab-container.menu-open .fab-menu-popup {
+  opacity: 1; visibility: visible; transform: translateY(0) scale(1);
+}
+
+.popup-header {
+  font-size: 11px; color: #86868b; text-transform: uppercase; letter-spacing: 0.05em;
+  padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); margin-bottom: 12px;
+}
+
+/* Item Link Menu */
+.fab-menu-item {
+  display: flex; align-items: center; gap: 14px; padding: 12px; color: #fff;
+  text-decoration: none; font-size: 14px; border-radius: 12px; cursor: pointer; transition: background 0.2s; margin-bottom: 6px;
+}
+.fab-menu-item:hover { background: rgba(255, 255, 255, 0.06); }
+
+/* Logo Lingkaran */
+.icon-circle { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.icon-circle.wa-bg { background: #25D366; color: #fff; }
+.icon-circle.bot-bg { background: linear-gradient(135deg, #ff7e40 0%, #af52de 100%); color: #fff; }
+
+.item-title { font-weight: 600; color: #fff; }
+.item-desc { font-size: 11px; color: #86868b; margin-top: 2px; }
+
+/* --- RESPONSIVITAS MOBILE --- */
+@media (max-width: 768px) {
+  .apple-hero h1 { font-size: 36px; }
+  .demo-grid-wrapper { grid-template-columns: 1fr; gap: 40px; }
+  .split-showcase, .split-showcase.reverse { grid-template-columns: 1fr; }
+  .showcase-text { padding: 30px; }
+  .showcase-image { min-height: 220px; }
+  .specs-dense-grid { grid-template-columns: 1fr; }
+  .apple-pricing-grid { grid-template-columns: 1fr; }
+  .matrix-table th:nth-child(2), .matrix-table td:nth-child(2) { display: none; }
+  .footer-directory { grid-template-columns: 1fr; gap: 24px; }
+  .footer-legal { flex-direction: column; gap: 10px; }
+}

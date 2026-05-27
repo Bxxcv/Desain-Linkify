@@ -1,0 +1,92 @@
+/* css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-main: #0F1014;
+  --bg-card: #181A20;
+  --bg-card-hover: #22252D;
+  --primary: #6C5CE7;
+  --primary-hover: #8073EA;
+  --secondary: #A8A5FF;
+  --text-main: #FFFFFF;
+  --text-muted: #8E93A6;
+  --border: #2A2D3A;
+  --success: #00B894;
+  --danger: #FF7675;
+  
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.2);
+  --shadow-glow: 0 0 20px rgba(108, 92, 231, 0.3);
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-pill: 100px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Typography */
+h1, h2, h3 { color: var(--text-main); font-weight: 700; }
+a { text-decoration: none; color: inherit; }
+
+/* Utilities */
+.glass {
+  background: rgba(24, 26, 32, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-md);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #A8A5FF 0%, #6C5CE7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+}
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+}
+.btn-outline:hover { background: var(--bg-card-hover); border-color: var(--primary); }
+
+/* Badges */
+.badge {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.badge.success { background: rgba(0, 184, 148, 0.1); color: var(--success); }
+.badge.premium { background: linear-gradient(135deg, rgba(168,165,255,0.2) 0%, rgba(108,92,231,0.2) 100%); color: var(--secondary); border: 1px solid rgba(108,92,231,0.3);}

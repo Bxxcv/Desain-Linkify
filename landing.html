@@ -1,0 +1,336 @@
+<!-- landing.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINKify</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="apple-nav">
+    <div class="nav-content">
+      <a href="#" class="nav-brand">
+        <img src="logo-linkify.png" alt="LINKify Logo">
+        <span>LINKify</span>
+      </a>
+      <a href="#demo">Preview</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#harga">Harga</a>
+      <a href="login-user.html">Masuk</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="apple-hero reveal">
+    <h1>Satu Link untuk Semua.<br>Platform <span class="text-gradient">Jualan Premium</span> Kamu.</h1>
+    <p>Katalog produk instan, WhatsApp API, Terintegrasi Shopee & Tokopedia. Tanpa paket gratisan.</p>
+    <div class="apple-cta-links">
+      <a href="#harga" class="apple-link-action">Lihat Paket Berlangganan &gt;</a>
+      <a href="login-user.html" class="apple-link-action">Buka Dashboard Admin &gt;</a>
+    </div>
+
+    <!-- Foto Visual Utama -->
+    <div class="hero-visual-wrapper">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80" class="hero-main-dashboard" alt="LINKify Analytics Dashboard">
+    </div>
+  </header>
+
+  <!-- Live Output Preview Section -->
+  <section id="demo" class="demo-section reveal">
+    <div style="height: 1px; background: #222; margin-bottom: 60px;"></div>
+    
+    <div class="demo-grid-wrapper">
+      <div class="demo-specs">
+        <h2 style="font-size: 36px; font-weight: 800; margin: 0 0 10px 0;">Struktur Bersih file <span class="text-gradient">index.html</span></h2>
+        <h3>Responsif & Terbaca Sempurna</h3>
+        <p>Inilah halaman utama yang akan diakses oleh calon pembeli Anda. Struktur grid gambar yang hidup memanjakan mata pembeli untuk langsung bertransaksi tanpa distraksi.</p>
+        
+        <div style="margin-top: 32px;">
+          <div style="font-weight: 600; color: #fff; margin-bottom: 4px; font-size: 15px;"><i class="ph ph-lightning" style="color: #ff7e40;"></i> Load Speed Dibawah 1 Detik</div>
+          <p style="font-size: 13px;">Optimasi kompresi gambar otomatis membuat halaman jualan Anda langsung terbuka instan di perangkat seluler manapun.</p>
+        </div>
+      </div>
+
+      <!-- Mockup HP -->
+      <div class="index-html-frame">
+        <div class="index-profile-section">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" class="index-avatar" alt="User Shop Avatar">
+          <div class="index-store-title">GlowUp Apparel <i class="ph-fill ph-seal-check" style="color: #af52de;"></i></div>
+          <div class="index-store-bio">Premium Streetwear & Local Brand</div>
+        </div>
+        
+        <!-- Grid Foto Jualan -->
+        <div class="index-products-grid">
+          <div class="index-product-card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&auto=format&fit=crop&q=80" alt="Product 1">
+            <div class="index-product-info">
+              <div style="font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Hyper-Red Sneakers</div>
+              <div class="index-product-price">Rp349.000</div>
+            </div>
+          </div>
+          <div class="index-product-card">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=300&auto=format&fit=crop&q=80" alt="Product 2">
+            <div class="index-product-info">
+              <div style="font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Oversized Tees White</div>
+              <div class="index-product-price">Rp185.000</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="index-links-container">
+          <a href="#" class="index-link-button wa-btn" onclick="return false;"><i class="ph-fill ph-whatsapp-logo"></i> Order Cepat Lewat WA</a>
+          <a href="#" class="index-link-button" onclick="return false;"><i class="ph ph-shopping-bag"></i> Kunjungi Shopee Mall</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teks Grid Penyeimbang -->
+    <div class="specs-dense-grid">
+      <div class="dense-card">
+        <h4>Tanpa Infrastruktur Gratisan</h4>
+        <p>Seluruh sistem berjalan di atas server premium cluster Firebase, memotong resiko server down saat traffic melonjak.</p>
+      </div>
+      <div class="dense-card">
+        <h4>Format Chat Otomatis</h4>
+        <p>Format order otomatis langsung terisi di aplikasi WhatsApp pembeli sesaat setelah mereka menekan tombol beli.</p>
+      </div>
+      <div class="dense-card">
+        <h4>Manajemen Data Mandiri</h4>
+        <p>Dashboard admin memberikan kontrol mutlak untuk mengubah urutan link, mengganti bio, dan memantau analitik harian.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Split Showcase Section -->
+  <section id="fitur" class="showcase-container reveal">
+    <div style="height: 1px; background: #222; margin-bottom: 40px;"></div>
+    
+    <div class="split-showcase">
+      <div class="showcase-text">
+        <h2>Hubungkan ke Ribuan Pembeli Lewat WhatsApp API.</h2>
+        <p>Setiap klik tautan produk langsung menyusun teks rapi nama barang dan harga untuk dikirim ke nomor WhatsApp Anda tanpa salah ketik.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" class="showcase-image" alt="WhatsApp Visual Support">
+    </div>
+
+    <div class="split-showcase reverse">
+      <div class="showcase-text">
+        <h2>Analitik Grafik Klik Akurat secara Real-Time.</h2>
+        <p>Pantau performa konversi harian tautan produk jualan mana yang paling diminati pasar langsung dari dasbor pantauan administrasi Anda.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" class="showcase-image" alt="Realtime Analytics Data">
+    </div>
+  </section>
+
+  <!-- Matriks Komparasi Feature -->
+  <section id="matrix" class="matrix-section reveal">
+    <div style="height: 1px; background: #222; margin-bottom: 60px;"></div>
+    <h2 style="text-align: center; font-size: 32px; font-weight: 700;">Bandingkan Kapabilitas Paket</h2>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Fitur Utama</th>
+          <th>Deskripsi Teknis</th>
+          <th>Basic</th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Slot Tautan Produk</td>
+          <td>Jumlah link produk jualan aktif</td>
+          <td>Unlimited</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Kustomisasi Tema</td>
+          <td>Pilihan arsitektur visual halaman toko</td>
+          <td>Standar</td>
+          <td>6 Tema Eksklusif</td>
+        </tr>
+        <tr>
+          <td>Statistik & Analitik</td>
+          <td>Pelacakan grafik klik pengunjung real-time</td>
+          <td>-</td>
+          <td class="matrix-check"><i class="ph ph-check-bold"></i></td>
+        </tr>
+        <tr>
+          <td>Lencana Verifikasi</td>
+          <td>Ikon centang biru reputasi toko resmi</td>
+          <td>-</td>
+          <td class="matrix-check"><i class="ph ph-check-bold"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Pricing Tier Panel -->
+  <section id="harga" class="reveal" style="padding: 60px 0; text-align: center;">
+    <h2 style="font-size: 38px; font-weight: 700; margin: 0;">Pilih Paket Bisnis LINKify Anda.</h2>
+    <p style="color: #86868b; font-size: 18px; margin: 8px 0 0 0;">Akses penuh tanpa kompromi iklan gratisan.</p>
+    
+    <div class="apple-pricing-grid">
+      <div class="apple-price-card">
+        <div style="color: #ff7e40; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Basic Tier</div>
+        <h3>Mulai Berjualan</h3>
+        <p style="color: #86868b; font-size: 13px; margin: 4px 0 0 0;">Fitur esensial untuk personal brand toko online.</p>
+        <div class="cost">Rp50.000 <span style="font-size: 14px; color: #86868b; font-weight: 400;">/bln</span></div>
+        <a href="login-user.html" class="apple-btn-buy" style="background: #222;">Mulai Paket Basic</a>
+        <ul class="apple-price-features">
+          <li>• Upload produk tanpa batasan</li>
+          <li>• Tautkan ke marketplace regional</li>
+          <li>• Tombol API WhatsApp langsung</li>
+        </ul>
+      </div>
+
+      <div class="apple-price-card premium-card">
+        <div style="color: #af52de; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Premium Tier</div>
+        <h3>Skala Profesional</h3>
+        <p style="color: #86868b; font-size: 13px; margin: 4px 0 0 0;">Untuk pelaku usaha UMKM dengan metrik tinggi.</p>
+        <div class="cost">Rp80.000 <span style="font-size: 14px; color: #86868b; font-weight: 400;">/bln</span></div>
+        <a href="login-user.html" class="apple-btn-buy btn-gradient">Mulai Paket Premium</a>
+        <ul class="apple-price-features">
+          <li>• Semua kapabilitas pada paket Basic</li>
+          <li>• Sistem statistik kunjungan real-time</li>
+          <li>• 6 tema arsitektur visual premium</li>
+          <li>• Akun bercentang verifikasi biru</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section id="faq" class="faq-section reveal">
+    <div style="height: 1px; background: #222; margin-bottom: 50px;"></div>
+    <h2 style="text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 40px;">Pertanyaan Seputar Layanan</h2>
+    
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Apakah data produk saya aman jika masa aktif paket habis? <i class="ph ph-plus faq-icon"></i></div>
+      <div class="faq-answer">Aman. Jika masa aktif paket bulanan Anda berakhir, sistem tidak akan menghapus basis data produk yang telah Anda unggah. Akun hanya akan diturunkan secara fungsional ke kapasitas fiturnya saja.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Bagaimana cara memperbarui isi file index toko saya? <i class="ph ph-plus faq-icon"></i></div>
+      <div class="faq-answer">Seluruh perubahan data, pergantian link, penulisan bio baru, hingga upload logo dapat dilakukan secara instan kapan saja melalui dashboard admin mandiri Anda tanpa perlu menyentuh baris kode mentah lagi.</div>
+    </div>
+  </section>
+
+  <!-- Footer Panel -->
+  <footer class="apple-footer reveal">
+    <div class="footer-inner">
+      <div class="footer-directory">
+        <div class="directory-col">
+          <h3>Jajaki</h3>
+          <ul><li><a href="#">Fitur Utama</a></li><li><a href="#">Katalog Publik</a></li></ul>
+        </div>
+        <div class="directory-col">
+          <h3>Akun Bisnis</h3>
+          <ul><li><a href="#">Kelola Dashboard</a></li><li><a href="#">Daftar Akun Baru</a></li></ul>
+        </div>
+        <div class="directory-col">
+          <h3>Infrastruktur</h3>
+          <ul><li><a href="#">Keamanan Data</a></li><li><a href="#">Privasi Pengguna</a></li></ul>
+        </div>
+        <div class="directory-col">
+          <h3>Tentang Kami</h3>
+          <ul><li><a href="#">Kontak Dukungan</a></li><li><a href="#">Karir Tim</a></li></ul>
+        </div>
+        <div class="directory-col">
+          <h3>Kebijakan</h3>
+          <ul><li><a href="#">Syarat Layanan</a></li><li><a href="#">Kebijakan Privasi</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div>Copyright &copy; 2026 LINKify Inc. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;"><a href="#">Kebijakan Privasi</a> | <a href="#">Ketentuan Penggunaan</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WIDGET KONTAK (LANGSUNG KELUAR LINK UTAMA) -->
+  <div class="apple-fab-container" id="contactWidget">
+    
+    <!-- Tombol Garis Tiga Utama -->
+    <div class="apple-fab-trigger" onclick="toggleFabMenu()">
+      <i class="ph ph-list" id="fabIcon"></i>
+    </div>
+
+    <!-- Container Popup Dropup Slider -->
+    <div class="fab-menu-popup" id="fabPopup">
+      <div class="popup-header">Dukungan Sistem</div>
+      
+      <!-- Opsi WhatsApp Admin -->
+      <a href="https://wa.me/628xxxxxxxxxx" target="_blank" class="fab-menu-item">
+        <div class="icon-circle wa-bg">
+          <i class="ph-fill ph-whatsapp-logo"></i>
+        </div>
+        <div>
+          <div class="item-title">Hubungi Admin WA</div>
+          <div class="item-desc">Masalah invoice, domain & aktivasi</div>
+        </div>
+      </a>
+      
+      <!-- Opsi Menuju Ke File Bot Asli Milik Lu -->
+      <a href="bot.html" class="fab-menu-item"> 
+        <div class="icon-circle bot-bg">
+          <i class="ph-fill ph-robot"></i>
+        </div>
+        <div>
+          <div class="item-title">Tanya Bot LINKify</div>
+          <div class="item-desc">Membuka file sistem asisten virtual</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT SYSTEM ENGINE -->
+  <script>
+    // 1. Engine Animasi Scroll Reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealOnScroll.observe(el));
+
+    // 2. FAQ Accordion Handler
+    function toggleFaq(element) { element.classList.toggle('open'); }
+
+    // 3. FAB Open/Close Trigger dengan Rotasi Hamburger ke "X"
+    function toggleFabMenu() {
+      const widget = document.getElementById('contactWidget');
+      const icon = document.getElementById('fabIcon');
+      
+      widget.classList.toggle('menu-open');
+      
+      if (widget.classList.contains('menu-open')) {
+        icon.className = "ph ph-x"; 
+      } else {
+        icon.className = "ph ph-list"; 
+      }
+    }
+
+    // Auto-Close jika Klik Diluar Area Widget
+    document.addEventListener('click', function(event) {
+      const container = document.getElementById('contactWidget');
+      const icon = document.getElementById('fabIcon');
+      if (!container.contains(event.target)) {
+        if(container.classList.contains('menu-open')) {
+          container.classList.remove('menu-open');
+          icon.className = "ph ph-list";
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
