@@ -13,10 +13,81 @@ body {
 }
 .brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 16px; color: #4f46e5; }
 .brand-icon { font-size: 20px; }
-.panel-tag { background: #e0e7ff; color: #4f46e5; font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-left: 4px; }
-.user-profile { display: flex; align-items: center; gap: 6px; cursor: pointer; }
-.user-profile img { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #e2e8f0; }
+.panel-tag {
+  background: #e0e7ff; 
+  color: #22c55e; 
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px; 
+  border-radius: 50px;
+}
 
+.panel-tag i {
+  font-size: 10px;
+  animation: pulse 2s infinite;
+  text-shadow: 0 0 8px #22c55e;
+}
+
+@keyframes pulse {
+ 0%, 100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+ 50% { 
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.user-profile img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+}
+
+.dropdown-item i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.dropdown-menu {
+  position: absolute !important;
+  margin-top: 8px !important;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 4px 0;
+  min-width: 190px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #334155;
+}
+
+.dropdown-item:hover {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.dropdown-divider {
+  margin: 4px 0;
+  border-color: #f1f5f9;
+}
 /* DASHBOARD HEADER */
 .dash-header { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 12px; }
 .welcome h2 { font-size: 18px; font-weight: 800; margin: 0; color: #0f172a; }
@@ -83,11 +154,34 @@ body {
 .text-success { color: #16a34a; background: #f0fdf4; }
 .stat-data h3 { font-size: 16px; font-weight: 800; margin: 0; }
 .stat-data p { font-size: 10px; color: #64748b; margin: 2px 0 0 0; }
+.line-chart-container {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 16px 10px 0 10px;
+  height: 140px;
+}
 
+.line-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.line-chart polyline {
+  animation: drawLine 0.8s ease-out;
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 /* CSS BAR CHART PURE */
-.bar-chart-container { display: flex; height: 120px; align-items: flex-end; justify-content: space-between; padding: 20px 10px 10px 10px; background: #f8fafc; border-radius: 8px; }
-.chart-bar { flex: 1; margin: 0 4px; background: #4f46e5; height: var(--bar-height); border-radius: 4px 4px 0 0; position: relative; }
-.chart-bar::after { content: attr(data-label); position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); font-size: 9px; font-weight: 700; color: #64748b; }
+
+
 
 /* MODAL ENGINE */
 .modal-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15,23,42,0.4); backdrop-filter: blur(4px); z-index: 1000; display: flex; align-items: flex-end; visibility: hidden; opacity: 0; transition: all 0.2s ease; }

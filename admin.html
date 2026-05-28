@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merchant Dashboard - LINKify</title>
-  <!-- Phosphor Icons untuk UI Dashboard Premium -->
+  
+  <!-- Bootstrap CSS + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
   <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -14,11 +20,42 @@
   <nav class="topnav">
     <div class="brand">
       <i class="ph-bold ph-lightning brand-icon"></i>
-      <span>LINKify <small class="panel-tag">Panel</small></span>
+      <span>
+        DASHBOARD ADMIN
+        <small class="panel-tag blink">
+          <i class="bi-circle-fill"></i> Online
+        </small>
+      </span>
     </div>
-    <div class="user-profile">
-      <img src="logo-linkify.png" alt="Merchant">
-      <i class="ph ph-caret-down"></i>
+    
+    <div class="user-profile dropdown">
+      <img src="logo-linkify.png" alt="Merchant" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-chevron-down" data-bs-toggle="dropdown" aria-expanded="false"></i>
+      
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <a class="dropdown-item" href="/profil">
+            <i class="bi bi-person-gear"></i> Pengaturan Profil
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="/lupa-password">
+            <i class="bi bi-key"></i> Lupa Password
+          </a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <a class="dropdown-item" href="https://wa.me/6285191245042" target="_blank">
+            <i class="bi bi-whatsapp"></i> Chat via WhatsApp
+          </a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <a class="dropdown-item text-danger" href="/logout">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 
@@ -26,7 +63,7 @@
     <!-- Header Summary Section -->
     <header class="dash-header">
       <div class="welcome">
-        <h2>Halo, Toko Keren! 👋</h2>
+        <h2>Halo, Demo Account! 👋</h2>
         <p>Kelola link toko & produk lu dari satu dashboard terpusat.</p>
       </div>
       <a href="kuliner.html" target="_blank" class="btn-preview">
@@ -34,7 +71,7 @@
       </a>
     </header>
 
-    <!-- Sub-Nav Tab Bar (Sticky Mobile-Friendly) -->
+    <!-- Sub-Nav Tab Bar -->
     <div class="dash-tabs">
       <button class="tab-item active" onclick="switchTab('tab-produk')">
         <i class="ph ph-package"></i> Produk
@@ -47,18 +84,14 @@
       </button>
     </div>
 
-    <!-- =======================================================
-         TAB 1: MANAJEMEN PRODUK
-         ======================================================= -->
+    <!-- TAB 1: MANAJEMEN PRODUK -->
     <section id="tab-produk" class="tab-content active">
       <div class="section-card-header">
         <h3>Kelola Produk Jualan</h3>
         <button class="btn-primary" onclick="openModal()"><i class="ph ph-plus"></i> Tambah</button>
       </div>
 
-      <!-- List Card Produk Aktif -->
       <div class="managed-list">
-        <!-- Item 1 -->
         <div class="manage-item">
           <div class="item-info">
             <div class="item-img"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100"></div>
@@ -79,11 +112,8 @@
       </div>
     </section>
 
-    <!-- =======================================================
-         TAB 2: PROFIL, SOSMED & PILIHAN TEMA
-         ======================================================= -->
+    <!-- TAB 2: PROFIL, SOSMED & PILIHAN TEMA -->
     <section id="tab-profil" class="tab-content">
-      <!-- Pengaturan Identitas Toko -->
       <div class="form-card">
         <h3><i class="ph ph-storefront"></i> Identitas Utama Toko</h3>
         <div class="input-group">
@@ -93,14 +123,30 @@
         <div class="input-group">
           <label>Bio Singkat Toko</label>
           <textarea rows="2">Kuliner Nusantara & Jajanan Tradisional Premium</textarea>
+          <label>WhatsApp Utama</label>
+          <input type="text" value="https://wa.me/6285191245042" />
+          <label>Link Shopee</label>
+          <input type="text" value="https://shopee.co.id/" />
+          <label>Link Tokopedia</label>
+          <input type="text" value="https://www.tokopedia.com/" />
+        </div>
+        <h3><i class="bi bi-globe"></i> Media Sosial</h3>
+        <div class="input-group">
+          <label>INSTAGRAM</label>
+          <input type="text" value="https://instagram.com/">
+          <label>TIKTOK</label>
+          <input type="text" value="https://tiktok.com/">
+          <label>X (TWITTER)</label>
+          <input type="text" value="https://x.com/" />
+          <label>FACEBOOK</label>
+          <input type="text" value="https://facebook.com/" />
         </div>
         <div class="input-group">
-          <label>Nomor WhatsApp (Gunakan Format 62)</label>
-          <input type="number" value="6281234567890">
+          <label>YOUTUBE</label>
+          <input type="text" value="https://YouTube.com/">
         </div>
       </div>
 
-      <!-- Pengaturan Tema Visualisasi -->
       <div class="form-card" style="margin-top: 16px;">
         <h3><i class="ph ph-palette"></i> Pilih Vibe & Tema Tampilan</h3>
         <p class="subtitle">Sesuaikan visualisasi toko dengan produk yang lu jual bang.</p>
@@ -146,20 +192,18 @@
       <button class="btn-save-all"><i class="ph ph-floppy-disk"></i> Simpan Perubahan Toko</button>
     </section>
 
-    <!-- =======================================================
-         TAB 3: DATA ANALITIK MONITORING
-         ======================================================= -->
+    <!-- TAB 3: DATA ANALITIK MONITORING -->
     <section id="tab-analitik" class="tab-content">
       <div class="analytics-overview">
         <div class="stat-box">
-          <div class="stat-icon"><i class="ph ph-users-combined"></i></div>
+          <div class="stat-icon"><i class="bi bi-people"></i></div>
           <div class="stat-data">
             <h3>1,240</h3>
             <p>Total Pengunjung</p>
           </div>
         </div>
         <div class="stat-box">
-          <div class="stat-icon text-success"><i class="ph ph-mouse-pointer-click"></i></div>
+          <div class="stat-icon text-success"><i class="bi bi-link-45deg"></i></div>
           <div class="stat-data">
             <h3>482</h3>
             <p>Total Klik Link</p>
@@ -167,26 +211,17 @@
         </div>
       </div>
 
-      <!-- Grafik Simulasi Menggunakan CSS Murni -->
+      <!-- CHART BARU PAKE CHART.JS -->
       <div class="form-card" style="margin-top: 16px;">
         <h3>Statistik Kunjungan (7 Hari Terakhir)</h3>
-        <div class="bar-chart-container">
-          <div class="chart-bar" style="--bar-height: 40%;" data-label="Sen"></div>
-          <div class="chart-bar" style="--bar-height: 65%;" data-label="Sel"></div>
-          <div class="chart-bar" style="--bar-height: 50%;" data-label="Rab"></div>
-          <div class="chart-bar" style="--bar-height: 85%;" data-label="Kam"></div>
-          <div class="chart-bar" style="--bar-height: 70%;" data-label="Jum"></div>
-          <div class="chart-bar" style="--bar-height: 95%;" data-label="Sab"></div>
-          <div class="chart-bar" style="--bar-height: 60%;" data-label="Ahd"></div>
+        <div style="position: relative; height: 180px; margin-top: 12px;">
+          <canvas id="visitChart"></canvas>
         </div>
       </div>
     </section>
-
   </div>
 
-  <!-- =======================================================
-       MODAL POPUP: TAMBAH PRODUK BARU
-       ======================================================= -->
+  <!-- MODAL POPUP -->
   <div id="productModal" class="modal-backdrop">
     <div class="modal-card">
       <div class="modal-header">
@@ -221,7 +256,10 @@
     </div>
   </div>
 
-  <!-- SCRIPT LOGIKA SWITCHING TAB UI SIMPEL -->
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
   <script>
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
@@ -229,8 +267,60 @@
       document.getElementById(tabId).classList.add('active');
       event.currentTarget.classList.add('active');
     }
+    
     function openModal() { document.getElementById('productModal').classList.add('open'); }
     function closeModal() { document.getElementById('productModal').classList.remove('open'); }
+
+    // CHART.JS CONFIG
+    const ctx = document.getElementById('visitChart').getContext('2d');
+    const visitChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Ahd'],
+        datasets: [{
+          label: 'Kunjungan',
+          data: [40, 65, 50, 85, 70, 95, 60],
+          borderColor: '#4f46e5',
+          backgroundColor: 'rgba(79, 70, 229, 0.1)',
+          tension: 0.4,
+          fill: true,
+          pointBackgroundColor: '#4f46e5',
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1e293b',
+            titleFont: { size: 12, family: 'Plus Jakarta Sans' },
+            bodyFont: { size: 12, family: 'Plus Jakarta Sans' },
+            padding: 8,
+            displayColors: false,
+            callbacks: {
+              label: function(context) {
+                return context.parsed.y + ' Kunjungan';
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: '#f1f5f9' },
+            ticks: { font: { size: 10, family: 'Plus Jakarta Sans' }, color: '#64748b' }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { font: { size: 10, family: 'Plus Jakarta Sans' }, color: '#64748b' }
+          }
+        }
+      }
+    });
   </script>
 </body>
 </html>
