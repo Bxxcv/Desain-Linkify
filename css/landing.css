@@ -7,6 +7,10 @@
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif !important;
 }
 
+:root{
+  --border:       rgba(255,255,255,0.08);
+  --accent:       #FF6B35;
+}
 body {
   background-color: #000000 !important;
   color: #f5f5f7 !important;
@@ -74,6 +78,23 @@ body {
   width: 100%; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 30px 100px rgba(175, 82, 222, 0.15);
 }
+.trust-bar{
+  background:rgba(255,255,255,0.025);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:13px 20px;overflow:hidden;
+}
+.trust-inner{
+  display:flex;align-items:center;justify-content: left;
+  gap:0;flex-wrap:wrap;max-width:900px;margin:0 auto;
+}
+.trust-item{
+  display:flex;align-items:center;gap:7px;
+  color:rgba(255,255,255,0.45);font-size:11.5px;font-weight:500;
+  padding:5px 16px;white-space:nowrap;
+}
+.trust-item svg{color:var(--accent);flex-shrink:0;}
+.trust-divider{width:1px;height:18px;background:var(--border);flex-shrink:0;}
 
 /* --- LIVE PREVIEW (INDEX.HTML) SECTION --- */
 .demo-section { max-width: 1024px; margin: 60px auto; padding: 0 20px; }
@@ -104,7 +125,7 @@ body {
 .index-product-price { font-weight: 700; color: #ff7e40; margin-top: 2px; }
 
 .index-link-button {
-  background: #1c1c1e; border: 1px solid rgba(255,255,255,0.05); color: #fff;
+  background: var(--accent); border: 1px solid rgba(255,255,255,0.05); color: #fff;
   padding: 12px; border-radius: 12px; display: block; text-align: center;
   font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 10px;
 }
