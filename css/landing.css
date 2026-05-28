@@ -130,7 +130,118 @@ body {
   font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 10px;
 }
 .index-link-button.wa-btn { background: #25D366; border: none; }
+  /* CAROUSEL */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1.5px solid #e0e0e0;
+  }
 
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+
+.carousel-slide {
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+  }
+.crsh1{
+  text-align: center;
+}
+  /* WRAPPER BUAT ANTI DOWNLOAD + COPYRIGHT */
+.img-wrap {
+    position: relative;
+    width: 100%;
+    background: #f5f5f5;
+  }
+
+.img-wrap img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    /* Anti download */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* COPYRIGHT DI TENGAH */
+.copyright {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    background: rgba(0,0,0,0.35); /* gue tebelin warnanya */
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 32px; /* gue gedein */
+    font-weight: 800; /* gue tebelin */
+    border-radius: 10px;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7); /* bayangan biar makin nongol */
+    letter-spacing: 1px;
+}
+
+.caption {
+    padding: 12px;
+    font-size: 14px;
+    text-align: center ;
+    color: #333;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+  }
+
+.prev,.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    z-index: 2;
+  }
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.dots {
+    text-align: center;
+    padding: 10px 0;
+    background: #fff;
+  }
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 4px;
+    background: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+.dot.active {
+    background: #d4ff00;
+  }
 /* Teks Padat Grid Bawah */
 .specs-dense-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
 .dense-card { text-align: left; border-top: 1px solid #333; padding-top: 16px; }

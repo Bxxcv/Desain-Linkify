@@ -54,38 +54,52 @@
           <p style="font-size: 13px;">Di bawah ini adalah preview halaman toko dan masih banyak lagi template yang wajib kamu coba.</p>
         </div>
       </div>
-
-      <!-- Mockup HP -->
-      <div class="index-html-frame">
-        <div class="index-profile-section">
-          <img src="logo.jpg" class="index-avatar" alt="User Shop Avatar">
-          <div class="index-store-title">Demo Account <i class="ph-fill ph-seal-check" style="color: #af52de;"></i></div>
-          <div class="index-store-bio">Premium Streetwear & Local Brand</div>
+       <!-- CAROUSEL -->
+  <div class="carousel">
+    <h1 class="crsh1">Preview Template</h1>
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <div class="img-wrap">
+          <img src="img/kreator.jpg" alt="Project 1">
+          <div class="copyright">© LINKify 2026</div>
         </div>
-        
-        <!-- Grid Foto Jualan -->
-        <div class="index-links-container">
-          <a href="#" class="index-link-button wa-btn" onclick="return false;"><i class="ph-fill ph-whatsapp-logo"></i> Order Cepat Lewat WA</a>
-          <a href="#" class="index-link-button" onclick="return false;"><i class="ph ph-shopping-bag"></i> Kunjungi Shopee Mall</a>
-          </div>
-        <div class="index-products-grid">
-          <div class="index-product-card">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&auto=format&fit=crop&q=80" alt="Product 1">
-            <div class="index-product-info">
-              <div style="font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Hyper-Red Sneakers</div>
-              <div class="index-product-price">Rp349.000</div>
-            </div>
-          </div>
-          <div class="index-product-card">
-            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=300&auto=format&fit=crop&q=80" alt="Product 2">
-            <div class="index-product-info">
-              <div style="font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Oversized Tees White</div>
-              <div class="index-product-price">Rp185.000</div>
-            </div>
-          </div>
+        <div class="caption">Preview template kreator</div>
+      </div>
+      <div class="carousel-slide">
+        <div class="img-wrap">
+          <img src="img/dropship.jpg" alt="Project 2">
+          <div class="copyright">© LINKify 2026</div>
         </div>
+        <div class="caption">Preview template dropship</div>
+      </div>
+      <div class="carousel-slide">
+        <div class="img-wrap">
+          <img src="img/skincare.jpg" alt="Project 3">
+          <div class="copyright">© LINKify 2026</div>
+        </div>
+        <div class="caption">Preview template skincare</div>
+      </div>
+      <div class="carousel-slide">
+        <div class="img-wrap">
+          <img src="img/kuliner.jpg" alt="Project 4">
+          <div class="copyright">© LINKify 2026</div>
+        </div>
+        <div class="caption">Preview template kuliner</div>
+      </div>
+      <div class="carousel-slide">
+        <div class="img-wrap">
+          <img src="img/gadget.jpg" alt="Project 5">
+          <div class="copyright">© LINKify 2026</div>
+        </div>
+        <div class="caption">Preview template gadget</div>
       </div>
     </div>
+    
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+    <div class="dots"></div>
+  </div>
+  <!-- CAROUSEL END -->
 
     <!-- Teks Grid Penyeimbang -->
     <div class="specs-dense-grid">
@@ -349,6 +363,61 @@
       }
     });
   </script>
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+const dotsNav = document.querySelector('.dots');
 
+let currentIndex = 0;
+
+// Bikin titik navigasi
+slides.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsNav.appendChild(dot);
+});
+
+const dots = Array.from(dotsNav.children);
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentIndex);
+  });
+}
+
+function goToSlide(index) {
+  currentIndex = index;
+  updateCarousel();
+}
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+
+// Blokir klik kanan di seluruh carousel
+document.querySelector('.carousel').addEventListener('contextmenu', e => e.preventDefault());
+
+// Swipe buat HP
+let startX = 0;
+track.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+track.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) nextBtn.click();
+  if (endX - startX > 50) prevBtn.click();
+});
+</script>
 </body>
 </html>
